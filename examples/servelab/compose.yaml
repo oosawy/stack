@@ -1,0 +1,12 @@
+services:
+  static-server:
+    build: ./static-server
+    ports:
+      - "${BIND_IP}:8080:8080"
+    volumes:
+      - ./public:/app/public:ro
+
+  echo-server:
+    build: ./echo-server
+    ports:
+      - "${BIND_IP}:9000:9000"
